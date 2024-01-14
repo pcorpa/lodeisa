@@ -26,7 +26,7 @@ const router = createHashRouter([
     element: <AreaInfo />,
   },
 ]);
-//test
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
