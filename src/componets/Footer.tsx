@@ -32,9 +32,10 @@ export const Footer = (props: FooterProps) => {
         bottom: 0,
         marginTop: "calc(10% + 60px)",
         width: "100%",
+        backgroundColor: "white",
       }}
     >
-      <Container maxWidth="lg">
+      <Container>
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>

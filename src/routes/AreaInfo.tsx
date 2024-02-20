@@ -1,20 +1,39 @@
-import { Container, CssBaseline, ThemeProvider } from "@mui/material"
-import { Footer, Header } from "../componets"
-import { defaultTheme } from "./Home";
+import { Grid, Typography } from "@mui/material";
+
+import { StyledToolbar } from "../componets/StyledToolbar";
 
 export const AreaInfo = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-    <CssBaseline>
-      <Container maxWidth="xl">
-        <Header  />
-      </Container>
-
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
-    </CssBaseline>
-  </ThemeProvider>
-  )
-}
+    <Grid
+      container
+      justifyContent={"center"}
+      alignContent={"center"}
+      direction={"column"}
+      spacing={0}
+    >
+      <Grid xs={12}>
+        <StyledToolbar currentSection="Ubicación" />
+      </Grid>
+      <Grid
+        container
+        xs={12}
+        direction={"row"}
+        justifyContent={"center"}
+        alignContent={"center"}
+      >
+        <Grid item sx={{ alignContent: "center", justifyContent: "center" }}>
+          <Typography
+            align="center"
+            justifySelf="center"
+            sx={{ backgroundColor: "green" }}
+            justifyItems="center"
+            color={"blue"}
+          >
+            xs=4
+          </Typography>
+        </Grid>
+        {/* </div> */}
+      </Grid>
+    </Grid>
+  );
+};

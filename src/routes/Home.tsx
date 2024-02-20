@@ -1,10 +1,10 @@
-import CssBaseline from "@mui/material/CssBaseline";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Header, Footer } from "../componets";
+import { createTheme } from "@mui/material/styles";
+import { Footer } from "../componets";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+
+import { StyledToolbar } from "../componets/StyledToolbar";
 
 export const defaultTheme = createTheme({
   palette: {
@@ -59,40 +59,44 @@ const images = [
 
 export const Home = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <CssBaseline>
-        <Container maxWidth="xl">
-          <Header />
+    <Grid
+      container
+      justifyContent={"center"}
+      alignContent={"center"}
+      direction={"column"}
+      spacing={0}
+    >
+      <Grid xs={12}>
+        <StyledToolbar currentSection={"Home"} />
+      </Grid>
+      <Grid
+        container
+        xs={12}
+        direction={"row"}
+        justifyContent={"center"}
+        alignContent={"center"}
+      >
+        <Grid item xs={12}>
           <AutoPlaySwipeableViews axis="x">
             {images.map((step) => (
-              <div key={step.label}>
-                <Box
-                  component="img"
-                  sx={{
-                    height: 800,
-                    display: "block",
-                    maxWidth: "100%",
-                    overflow: "hidden",
-                    width: "100%",
-                    opacity: "80%",
-                    objectFit: "cover",
-                  }}
-                  src={step.imgPath}
-                  alt={step.label}
-                />
-              </div>
+              <Box
+                component="img"
+                sx={{
+                  height: 800,
+                  display: "block",
+                  overflow: "hidden",
+                  width: "100%",
+                  opacity: "100%",
+                  objectFit: "contain",
+                  justifyItems: "center",
+                  alignItems: "center",
+                }}
+                src={step.imgPath}
+                alt={step.label}
+              />
             ))}
           </AutoPlaySwipeableViews>
-        </Container>
-        <Container
-          maxWidth="xl"
-          sx={{
-            marginTop: 5,
-            alignItems: "center",
-            justifyItems: "center",
-          }}
-        >
-          <iframe
+          {/* <iframe
             style={{
               background: "#FDF7E4",
               border: 0,
@@ -102,14 +106,14 @@ export const Home = () => {
             src="https://8b67005a8b4a41c2a2e2625bb7058e5f.elf.site"
             width="1400"
             height="700"
-          ></iframe>
-        </Container>
+          ></iframe> */}
 
-        <Footer
-          title="Footer"
-          description="Something here to give the footer a purpose!"
-        />
-      </CssBaseline>
-    </ThemeProvider>
+          <Footer
+            title="Footer"
+            description="Something here to give the footer a purpose!"
+          />
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
