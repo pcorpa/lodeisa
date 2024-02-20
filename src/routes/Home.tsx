@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 import { Footer } from "../componets";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 import { StyledToolbar } from "../componets/StyledToolbar";
 

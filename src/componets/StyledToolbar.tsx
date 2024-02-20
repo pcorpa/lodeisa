@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Drawer,
-  Grid,
-  Link,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { Button, Drawer, Grid, Link, Toolbar, Typography } from "@mui/material";
 import { DrawerFromTheLeft } from "./Drawer";
 import { useEffect, useState } from "react";
 import { Menu } from "@mui/icons-material";
