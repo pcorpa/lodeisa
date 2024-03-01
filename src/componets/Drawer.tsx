@@ -60,7 +60,7 @@ export const DrawerFromTheLeft = ({
     >
       <Divider />
       <List>
-        {sectionList.map(({ title, url }, index) => (
+        {sectionList.map(({ title, url }) => (
           <Link
             noWrap
             key={title}

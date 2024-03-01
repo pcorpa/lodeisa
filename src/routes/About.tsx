@@ -128,12 +128,8 @@ export const About = () => {
             especies.
           </Typography>
 
-          <Footer
-            title="Footer"
-            description="Something here to give the footer a purpose!"
-          />
+          <Footer />
         </Grid>
-        {/* </div> */}
       </Grid>
     </Grid>
   );

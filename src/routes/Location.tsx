@@ -80,10 +80,7 @@ export const Location = () => {
           ></iframe>
         </Grid>
       </Grid>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
+      <Footer />
     </Grid>
   );
 };
