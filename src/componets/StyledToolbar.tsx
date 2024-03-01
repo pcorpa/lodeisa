@@ -1,12 +1,12 @@
 import { Button, Drawer, Grid, Link, Toolbar, Typography } from "@mui/material";
 import { DrawerFromTheLeft } from "./Drawer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Menu } from "@mui/icons-material";
+import { useWindowDimensions } from "../hooks/WindowDimentions";
 
 export const sections = [
   { title: "Home", url: "#" },
   { title: "Acerca de la propiedad", url: "#/about" },
-  { title: "Ubicacion", url: "#/areainfo" },
   { title: "Como llegar", url: "#/location" },
   { title: "Contactanos", url: "#/contact" },
 ];
@@ -17,29 +17,8 @@ interface Props {
 
 export const StyledToolbar = ({ currentSection }: Props) => {
   const [drawerState, setDrawerState] = useState<boolean>(false);
-
-  const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  };
-  const useWindowDimensions = () => {
-    const [windowDimensions, setWindowDimensions] = useState(
-      getWindowDimensions()
-    );
-    useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-    return windowDimensions;
-  };
-
   const viewPortSizeMobile = useWindowDimensions().width < 600;
+
   return (
     <Toolbar
       component="nav"

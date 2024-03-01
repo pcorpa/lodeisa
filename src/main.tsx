@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import { Home, Contact, About, Location, AreaInfo } from "./routes";
+import { Home, Contact, About, Location } from "./routes";
 
 const router = createHashRouter([
   {
@@ -20,10 +20,6 @@ const router = createHashRouter([
   {
     path: "/location",
     element: <Location />,
-  },
-  {
-    path: "/areainfo",
-    element: <AreaInfo />,
   },
 ]);
 

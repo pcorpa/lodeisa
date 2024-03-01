@@ -6,7 +6,6 @@ export const Header = () => {
   const sections = [
     { title: "Home", url: "#" },
     { title: "Acerca de la propiedad", url: "#/about" },
-    { title: "Ubicacion", url: "#/areainfo" },
     { title: "Como llegar", url: "#/location" },
     { title: "Contactanos", url: "#/contact" },
   ];

@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Footer } from "../componets";
 import { StyledToolbar } from "../componets/StyledToolbar";
 
@@ -22,12 +22,7 @@ export const Contact = () => {
         alignContent={"center"}
       >
         <Grid item sx={{ alignContent: "center", justifyContent: "center" }}>
-          <Typography>HOLAAAA</Typography>
-
-          <Footer
-            title="Footer"
-            description="Something here to give the footer a purpose!"
-          />
+          <Footer />
         </Grid>
       </Grid>
     </Grid>

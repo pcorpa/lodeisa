@@ -1,5 +1,4 @@
-export {Home} from './Home'
-export { About } from './About'
-export { Contact } from './Contact'
-export { Location } from './Location'
-export { AreaInfo } from './AreaInfo'
+export { Home } from "./Home";
+export { About } from "./About";
+export { Contact } from "./Contact";
+export { Location } from "./Location";

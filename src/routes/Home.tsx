@@ -21,11 +21,6 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const images = [
   {
-    label: "Frente de la casa",
-    imgPath:
-      "https://ipfs.filebase.io/ipfs/QmRsUzZLxhThHZGsC5Zj5DMYej12ERkvaamDd2y9iEr3FP",
-  },
-  {
     label: "Frente de casa 2",
     imgPath:
       "https://ipfs.filebase.io/ipfs/QmWojsDzaXgAbMszZS3Edb2PMNLiouR88g7ftYFz3rvtm9/QmVtv9k1YaxgpWPD9YMvsphaW6FGBsuUfsSJshqoBtdzcX",
@@ -66,7 +61,7 @@ export const Home = () => {
       direction={"column"}
       spacing={0}
     >
-      <Grid xs={12}>
+      <Grid item xs={12}>
         <StyledToolbar currentSection={"Home"} />
       </Grid>
       <Grid
@@ -82,7 +77,7 @@ export const Home = () => {
               <Box
                 component="img"
                 sx={{
-                  height: 800,
+                  height: { xl: 800, md: 300 },
                   display: "block",
                   overflow: "hidden",
                   width: "100%",
@@ -96,23 +91,11 @@ export const Home = () => {
               />
             ))}
           </AutoPlaySwipeableViews>
-          {/* <iframe
-            style={{
-              background: "#FDF7E4",
-              border: 0,
-              alignSelf: "center",
-              justifySelf: "center",
-            }}
-            src="https://8b67005a8b4a41c2a2e2625bb7058e5f.elf.site"
-            width="1400"
-            height="700"
-          ></iframe> */}
-
-          <Footer
-            title="Footer"
-            description="Something here to give the footer a purpose!"
-          />
         </Grid>
+      </Grid>
+
+      <Grid item>
+        <Footer />
       </Grid>
     </Grid>
   );

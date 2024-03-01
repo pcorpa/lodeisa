@@ -6,10 +6,12 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
+  Typography,
 } from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
 interface SectionList {
   title: string;
@@ -25,9 +27,33 @@ export const DrawerFromTheLeft = ({
   setDrawerState,
   sectionList,
 }: DrawerProps) => {
+  const iconSwitch = (title: string) => {
+    switch (title) {
+      case "Home":
+        return <HomeRoundedIcon />;
+        break;
+
+      case "Acerca de la propiedad":
+        return <InfoRoundedIcon />;
+        break;
+
+      case "Como llegar":
+        return <NavigationIcon />;
+        break;
+
+      case "Contactanos":
+        return <SendRoundedIcon />;
+        break;
+
+      default:
+        return <HomeRoundedIcon />;
+        break;
+    }
+  };
+
   return (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 300 }}
       role="presentation"
       onClick={() => setDrawerState(false)}
       onKeyDown={() => setDrawerState(false)}
@@ -35,13 +61,37 @@ export const DrawerFromTheLeft = ({
       <Divider />
       <List>
         {sectionList.map(({ title, url }, index) => (
-          <Link noWrap key={title} href={url}>
-            <ListItem key={title} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={title} />
+          <Link
+            noWrap
+            key={title}
+            href={url}
+            sx={{ alignItems: "center", justifyItems: "center" }}
+          >
+            <ListItem
+              sx={{
+                backgroundColor: "#FDF7E4",
+                borderRadius: 2,
+                paddingY: 1,
+                marginY: 1,
+                marginX: 1,
+                paddingX: 2,
+                width: "95%",
+              }}
+              key={title}
+              disablePadding
+            >
+              <ListItemButton sx={{ textDecoration: "none" }}>
+                <ListItemIcon>{iconSwitch(title)}</ListItemIcon>
+                <Typography
+                  sx={{
+                    textDecoration: "none",
+                    textDecorationColor: "#595342",
+                    fontWeight: 900,
+                    color: "#595342",
+                  }}
+                >
+                  {title}
+                </Typography>
               </ListItemButton>
             </ListItem>
           </Link>
